@@ -1,0 +1,97 @@
+@layer root {
+  :root {
+    --border-radius: 0.75rem;
+    --colors-border-rgb: 216, 222, 230;
+    --colors-input-rgb: 199, 206, 216;
+    --colors-ring-rgb: 10, 147, 121;
+    --colors-background-rgb: 245, 245, 248;
+    --colors-foreground-rgb: 41, 43, 53;
+    --colors-primary-rgb: 10, 147, 121;
+    --colors-primary-foreground-rgb: 246, 247, 249;
+    --colors-secondary-rgb: 41, 43, 53;
+    --colors-secondary-foreground-rgb: 255, 255, 255;
+    --colors-destructive-rgb: 239, 68, 68;
+    --colors-destructive-foreground-rgb: 255, 255, 255;
+    --colors-success-rgb: 57, 165, 97;
+    --colors-success-foreground-rgb: 255, 255, 255;
+    --colors-muted-rgb: 248, 250, 252;
+    --colors-muted-foreground-rgb: 100, 116, 139;
+    --colors-accent-rgb: 221, 221, 234;
+    --colors-accent-foreground-rgb: 41, 43, 53;
+    --colors-popover-rgb: 255, 255, 255;
+    --colors-popover-foreground-rgb: 41, 43, 53;
+    --colors-card-rgb: 255, 255, 255;
+    --colors-card-foreground-rgb: 41, 43, 53;
+    --colors-highlight-rgb: 229, 161, 88;
+    --colors-highlight-foreground-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --colors-border-rgb: 40, 44, 52;
+    --colors-input-rgb: 51, 55, 65;
+    --colors-ring-rgb: 72, 211, 160;
+    --colors-background-rgb: 18, 24, 29;
+    --colors-foreground-rgb: 233, 238, 243;
+    --colors-primary-rgb: 72, 211, 160;
+    --colors-primary-foreground-rgb: 9, 21, 33;
+    --colors-secondary-rgb: 233, 238, 243;
+    --colors-secondary-foreground-rgb: 9, 21, 33;
+    --colors-destructive-rgb: 239, 68, 68;
+    --colors-destructive-foreground-rgb: 255, 255, 255;
+    --colors-success-rgb: 57, 165, 97;
+    --colors-success-foreground-rgb: 255, 255, 255;
+    --colors-muted-rgb: 2, 8, 23;
+    --colors-muted-foreground-rgb: 148, 163, 184;
+    --colors-accent-rgb: 30, 41, 59;
+    --colors-accent-foreground-rgb: 248, 250, 252;
+    --colors-popover-rgb: 13, 17, 22;
+    --colors-popover-foreground-rgb: 233, 238, 243;
+    --colors-card-rgb: 13, 17, 22;
+    --colors-card-foreground-rgb: 233, 238, 243;
+    --colors-highlight-rgb: 229, 161, 88;
+    --colors-highlight-foreground-rgb: 255, 255, 255;
+  }
+
+  * {
+    @apply border-border box-border select-none drag-none;
+  }
+
+  html {
+    height: 100vh;
+    overscroll-behavior: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overscroll-behavior: contain;
+    -webkit-text-size-adjust: 100%;
+    @apply min-h-screen bg-background text-foreground;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
+
+  #__nuxt {
+    @apply contents;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: rgb(var(--colors-foreground)) !important;
+  }
+
+  input:autofill {
+    @apply border-2;
+    box-shadow: inset 0 0 0px 1000px rgb(var(--colors-background)) !important;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
